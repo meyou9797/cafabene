@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+/*메인슬라이더*/
+.mainSlider{
+    height: 650px;
+    overflow:hidden;
+    position:relative;
+}
+.mainSlider img{
+    position:absolute;/*모든 해상도에서도 중앙으로 보이게 만드는 방법*/
+    left:50%;
+    margin-left:-960px;/*이미지 크기의 반값*/
+}
+/*mainCon01*/
+.mainCon01{
+    text-align: center;/*글씨와 박스를 둘다 중앙정렬*/
+    background:#f5f5f5 url(../images/main/bg_bar_div.gif)no-repeat center center;/*선을 정중앙정렬 시켜서 치우친 부분을 정리하기위해*/
+    padding:50px 0;
+}
+
+.mainCon01>div{
+    display:inline-block;
+    text-align:left;/*글씨만 왼쪽정렬*/
+    vertical-align:top; /*글씨 위로 붙게 정렬*/
+    padding:0 50px;/**/
+}
+.mainCon01>div span{
+    display:block;
+}
+
+div.con01L{
+    padding:0 130px;
+}
+.con01L h2{
+    font-size:30px;
+    color:#711b04;
+    margin-bottom:30px;
+}
+.con01L p{}
+.con01L span{}
+
+.con01R{
+    font-size:14px;
+    line-height:25px;/*행간*/
+}
+.con01R span{}
+.plusBtn{
+    width:40px;
+    height: 40px;
+    background:url(../images/main/btn_more02.png)no-repeat;
+    background-size:100%;/*배경채우기*/
+    text-indent:-9999px;
+    margin-top:20px;
+}
+.plusBtn a{
+    display:block;
+    height: 100%;
+}
+/*mainCon02*/
+.mainCon02{
+    background:url(../images/main/visual01.jpg)no-repeat center center;
+    background-attachment:fixed;/*ficed사용시 사이즈 줘야함 그래서 백그라운드 사이즈 커버와 같이 사용*/
+    background-size:cover;
+    color:#fff;
+    text-align: center;
+    padding:100px 0 50px 0;/*위 오른쪽,왼쪽 아래*/
+}
+
+.mainCon02 h2{
+    font-family:"Notosans",sans-serif;
+    font-weight:500;
+    background:url(../images/main/tit_line_bot.png)no-repeat center bottom;/*포지션 x값 중앙 y값 아래,정중앙의 아래*/
+    padding-bottom:15px;/*선기준안쪽여백*/
+}
+.mainCon02 p{
+    font-size:12px;
+    margin-top:15px;
+    line-height:22px;
+    font-weight:200;
+}
+.mainCon02 p span{display:block;}/*줄바꿈시키기*/
+.mainCon02 .con02SubTit{
+    font-size:14px;
+    font-weight:400;
+}
+
+.mainCon02 .plusBtn{/*가로값을 가지고 있기 때문에 왼쪽에 붙어있음*/
+    background-image:url(../images/main/btn_more.png);/*background로 불러오면 안됌*/
+    margin:0 auto;/*display:inline-block 줘도 된다*/
+    margin-top:50px;
+}/*똑같은 class명을 가지고 있기때문에 부모값을 하나 더 불러와야한다*/
+
+/*mainCon03*/
+.mainCon03{
+    text-align: center;
+    padding:80px 0;
+}
+
+.con03Tit{}
+.con03Tit h2{
+    color:#711b04;
+    font-size:30px;
+}
+.con03Tit p{
+    margin:20px 0;/*위아래로 여백*/
+}
+
+.con03Menu{}
+.con03Menu li{
+    float:left;
+    position:relative;/*relative는 나를 품고있는 어떠한 부모에게 가능(형제요소에게 주면안돼)*/
+    margin-left:3px;
+    margin-top:3px;
+}
+.con03Menu li:first-child{margin-left:0;}
+.con03Menu li a{}
+.con03Menu li img{
+    display:block;/*이미지가 인라인이여서 생기는 여백 없애주기 위해*/
+}
+
+.menuInfo{
+    position:absolute;
+    bottom:20px;
+    width:100%;/*text-align:center 먹혀있기 때문에 100%주면 중앙정렬된다*/
+}
+.menuInfo h3{
+    font-size:16px;
+    color:#7d645a;
+}
+.menuInfo p{
+    font-size:12px;
+}
+
+/*mainCon04*/
+.mainCon04{
+    background-image:url(../images/main/visual02.jpg);
+    background-attachment:inherit;/*부모값을 내려받는 속성 inherit, 컨04의 부모는 컨테이너*/
+    padding:150px 0;
+}
+.mainCon04 h2{
+    font-family:"NanumMyeonjo",serif;
+    font-weight: 900;
+}
+.mainCon04 .searchBtn{
+    width:280px;/*백그라운드 사이즈100% 해뒀기 때문에 가로값을 줄여도 잘리지않고 보인다*/
+    background-image:url(../images/main/btn_find_store.png);
+    background-position:center bottom;/*밑에 생기는 여백 없애기 위해*/
+}
+/*mainCon05*/
+.mainCon05{
+    background:#beb4af;
+    color:#fff;
+    text-align: center;
+    padding:50px 0;
+}
+.mainCon05 h2,.mainCon05 p,.mainCon05 .plusBtn{
+    display:inline-block;
+    vertical-align: middle;/*세로중앙정렬,인라인일때 유일하게 정렬가능한*/
+}
+.mainCon05 p{
+    margin:0 20px 0 50px;/*위오른쪽아래왼쪽(시계방향)*/
+}
+.mainCon05 .plusBtn{margin-top:0;}
+.mainCon05 .plusBtn a{}
+
+/*mainCon06*/
+.mainCon06{
+    background:url(../images/main/bg_visual.jpg)no-repeat center center;
+    background-size:cover;
+    padding:80px 0;
+}
+
+.con06List{}
+.con06List li{
+    width:25%;/*이너값기준 4등분*/
+    height:150px;
+    padding:0 20px;
+    box-sizing: border-box;
+    text-align: center;
+    float:left;
+    font-family:"NanumMyeonjo",serif;
+    font-weight:900;
+}
+.con06List li h4{
+    font-size:18px;
+    color:#7d645a;
+    margin-bottom:20px;
+}
+.con06List li h4 span{vertical-align: middle;}
+.con06List li h4 img{
+    width:20px;
+    vertical-align: middle;
+}
+.con06List li p{font-size:14px;}

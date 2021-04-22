@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+/*헤더*/
+#header{}
+
+.hTop{
+    background:#282828;
+    font-size:12px;
+    height:40px;
+    line-height:40px;
+}
+.hTop a{
+    color:#fff;
+    display:block;
+    border-left:1px solid #231F20;/*htop에 있는 모든 a태그에 효과주기 위해*/
+    padding:0 30px;
+}
+.engBtn{
+    float:left;/*다 같이 플로트 레프트를 시켜줘야 위에 붙는다,cf를 줘야 htop부분이 나타남*/
+}
+.engBtn a{
+    border-right:1px solid #231F20;
+}
+
+.util{
+    float:right;
+}
+.util li{
+    float:left;
+}
+.util li:last-child a{padding-right:0;}/*오른쪽 끝의 패딩값 빼기*/
+.util li a{}
+.util li img{
+    margin-left:5px;/*이미지(인라인) 양옆의 마진값 사용가능 but 위아래는 X*/
+}
+
+.hBottom{
+    height:80px;
+    line-height:80px;
+}
+.hBottom h1{
+    float:left;
+}
+.hBottom h1 a{}
+.hBottom h1 img{
+    width:150px;
+}
+
+.gnb{
+    float:right;
+}
+.gnb>li{
+    float:left;
+    font-family:"NanumMyeongjo",serif;
+    font-weight:900;/*폰트굵게*/
+    margin-left:50px;/*margin으로 바꾼이유:hover했을때 padding영역까지 가로값 잡히기 때문*/
+    position:relative;
+}
+.gnb>li::after{
+    content:"";
+    display:block;
+    width:0;
+    height:3px;
+    background:#333;
+    margin:0 auto;/*중앙에서부터 가로값 퍼지게*/
+    margin-top:-3px;/*배경에 가려져있어서 -3px로 위로 올려주기*/
+    transition:width 0.3s linear; /*2.가로값이 보이게,콩만하게 보이는거 속도때문에 생김*/
+    overflow:hidden;
+    
+}
+.gnb>li:hover::after{
+    width:100%;/*1.호버했을때 가로값 풀로차게 보이게하고*/
+}
+.gnb li a{}
+/*서브메뉴*/
+.lnb{
+    width:100%;
+    position:absolute;
+    z-index: 1;
+    background:#fff;
+    text-align: center;
+    line-height:40px;
+    max-height: 0;
+    overflow:hidden;
+    transition:max-height 0.5s;
+}
+.gnb li:hover .lnb{
+    max-height: 500px;
+}
+.lnb li{}
+.lnb li a{}
+
+
+
+
+/*푸터*/             /*default.css에서 body,h1,h2,h3,h4,h5,h6,p,dl,dd{margin:0;} dl,dd추가해야 위에 여백이 사라짐*/
+#footer{
+    background-color:#1e1e1e;   /*1.전체 배경색 적용*/
+    color:#8c8c8c;              /*3.글씨색변경*/
+    position:relative;          /*7.topBtn 기준점 적용*/
+    font-size:12px;             /*12.전체적으로 폰트 사이즈 적용*/ 
+}          
+#footer a{
+     color:#8c8c8c;            /*4.footer안에 있는 a태그 글씨색변경*/
+}
+.topBtn{                       /*5.topBtn의 이미지를 불러오기위해 가로세로값적용 후 이미지 적용*/
+    width:102px;
+    height:39px;
+    background:url(../images/common/btn_go_top.png) no-repeat;
+    position:absolute;           /*6.topBtn을 위로 올리기위해 앱솔루트적용*/
+    left:50%;                    /*11.topBt 중앙정렬하기 위해 left:50%,margin-left:-51px(width:102px의 반)적용*/   
+    margin-left:-51px; 
+    top:-39px;                   /*8.-39로 해서 위로 올려줌*/               
+}
+.topBtn a{                    /*9.버튼이미지와 a태그를 정렬하기 위해 적용*/
+    display:block;
+    height:100%;
+    padding-top:12px;
+    padding-left:30px;
+    box-sizing:border-box;     /*10.패딩을 준 순간 a태그 영역을 벗어나기때문에 적용*/ 
+}
+
+.fTop{
+    background-color:#282828;  /*2.fTop 배경색 적용*/
+    padding:50px 0;            /*20.fTop위아래로 여백적용*/ 
+}
+
+.fMenu{ 
+    float:left;                 /*18.dt가 옆으로 정렬되게 적용후 inner안에cf적용*/
+    margin-right:80px;          /*19.옆으로 마진적용*/ 
+}
+.fMenu dt{                      /*13.제목에 폰트적용*/
+    font-family:"NanumMyeongjo" ,serif;
+    font-weight:900;
+    font-size:16px;
+    background:url(../images/common/bar_snb.gif) no-repeat left bottom;     /*14.제목밑에 밑줄이미지와 포지션적용*/
+    padding-bottom:10px;             /*15.제목과 밑줄의 여백 적용*/
+    margin-bottom:10px;              /*17.밑줄과 dd의 여백 적용*/  
+}
+.fMenu dd{
+    line-height:25px;              /*16.dd의 여백 적용*/ 
+}
+.fMenu dd a{}
+
+.fBottom{
+    position:relative;   /*30.*/
+    padding:50px 0       /*31.위아래 패딩적용*/
+}
+.fLogo{
+    margin-bottom:30px;    /*25.li의 위아래 여백없애주기.fLogo에는 margin-bottom, copy에는 margin-top적용*/
+}
+.fLogo img{
+     width:180px;                  /*21.fLogo로고에 가로값을 주면 영역만 줄어들기때문에 img에 가로값적용*/
+}
+
+.fInfo{
+    overflow:hidden;       /*23.float:left를 해제하는 방법중 하나(html에서 cf적용 안해도 됨)*/
+}
+.fInfo li{
+    float:left;    /*22.li를 각각 정렬하기위해 플루트를 주면 전체 li가 옆으로 붙기때문에 각각 cf주기보단 fInfo에서 overflow:hidden줘서 분리*/    
+}
+.fInfo li::after{   /*24.li각각의 있는 옆선 적용*/
+    content:"";
+    display:inline-block;
+    width:1px;
+    height:8px;
+    background-color:#2d3333;
+    margin:0 5px; 
+}
+.fInfo li:last-child::after{display:none;}  /*25.li의 마지막 선 없애주기*/
+.fInfo li a{}
+
+.copy{
+    margin-top:30px;  /*26.li의 위아래 여백없애주기.fLogo에는 margin-bottom, copy에는 margin-top적용*/
+}
+
+.fSns{
+    position:absolute;  /*28.앱솔루트로 띄운다*/
+    right:0;         /*29.위치 적용 후 fBottom에 기준점 적용*/ 
+    top:50px;         /*33.fBottom에 패딩을 줬기때문에 top을 줘서 밑으로 내려줌*/ 
+}
+.fSns li{
+    float:left;        /*27.li옆으로 정렬, 부모를 앱솔루트로 띄울거기때문에 cf를 줄필요없음*/
+    margin-left:5px;  /*32.왼쪽으로 여백 적용*/ 
+}
+.fSns li a{}
+.fSns li img{
+    width:25px;     /*26.이미지 가로값적용*/
+}
